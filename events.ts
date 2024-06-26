@@ -17,23 +17,39 @@ function forceHas(obj: forceIndex, key: string) {
 }
 
 export namespace TeardownBindings {
-	export function ConnectInit(TSTL_Init: () => void) {
-		if (forceHas(globalThis, "init")) throw new Error("[TSTL] init function already connected");
-		forceWrite(globalThis, "init", TSTL_Init);
+	/**
+	 * @param Init The function to be called when the game is initialized
+	 * This can only run once as it overwrites the global init function directly! Please use your own logic to manage several connections.
+	 */
+	export function ConnectInit(Init: () => void) {
+		if (forceHas(globalThis, "init")) throw new Error("[TypeScriptToLua] init function already connected");
+		forceWrite(globalThis, "init", Init);
 	}
 
-	export function ConnectTick(TSTL_Tick: (dt: number) => void) {
-		if (forceHas(globalThis, "init")) throw new Error("[TSTL] tick function already connected");
-		forceWrite(globalThis, "init", TSTL_Tick);
+	/**
+	 * @param Tick The function to be called when the game is initialized
+	 * This can only run once as it overwrites the global init function directly! Please use your own logic to manage several connections.
+	 */
+	export function ConnectTick(Tick: (dt: number) => void) {
+		if (forceHas(globalThis, "init")) throw new Error("[TypeScriptToLua] tick function already connected");
+		forceWrite(globalThis, "init", Tick);
 	}
 
-	export function ConnectUpdate(TSTL_Update: (dt: number) => void) {
-		if (forceHas(globalThis, "init")) throw new Error("[TSTL] update function already connected");
-		forceWrite(globalThis, "init", TSTL_Update);
+	/**
+	 * @param Update The function to be called when the game is initialized
+	 * This can only run once as it overwrites the global init function directly! Please use your own logic to manage several connections.
+	 */
+	export function ConnectUpdate(Update: (dt: number) => void) {
+		if (forceHas(globalThis, "init")) throw new Error("[TypeScriptToLua] update function already connected");
+		forceWrite(globalThis, "init", Update);
 	}
 
-	export function ConnectDraw(TSTL_Draw: () => void) {
-		if (forceHas(globalThis, "init")) throw new Error("init function already connected");
-		forceWrite(globalThis, "init", TSTL_Draw);
+	/**
+	 * @param Draw The function to be called when the game is initialized
+	 * This can only run once as it overwrites the global init function directly! Please use your own logic to manage several connections.
+	 */
+	export function ConnectDraw(Draw: () => void) {
+		if (forceHas(globalThis, "init")) throw new Error("[TypeScriptToLua] init function already connected");
+		forceWrite(globalThis, "init", Draw);
 	}
 }
