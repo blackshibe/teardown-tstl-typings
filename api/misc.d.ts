@@ -13,8 +13,21 @@
 // QueryClosestFire
 // QueryAabbFireCount
 // RemoveAabbFires
+
+/**
+ *
+ * @returns Current camera transform
+ */
 declare function GetCameraTransform(this: void): TTransform;
-// SetCameraTransform
+
+/**
+ *
+ * @param transform Desired camera transform
+ * @param fov Optional horizontal field of view in degrees (default: 90)
+ *
+ * Override current camera transform for this frame. Call continuously to keep overriding. When transform of some shape or body used to calculate camera transform, consider use of AttachCameraTo, because you might be using transform from previous physics update (that was on previous frame or even earlier depending on fps and timescale).
+ */
+declare function SetCameraTransform(this: void, transform: TTransform, fov?: number): void;
 // SetCameraOffsetTransform
 // AttachCameraTo
 // SetPivotClipBody
