@@ -18,7 +18,7 @@
 // IsBodyActive
 // SetBodyActive
 // ApplyBodyImpulse
-// GetBodyShapes
+declare function GetBodyShapes(this: void, body: number): number[];
 // GetBodyVehicle
 // GetBodyBounds
 // GetBodyCenterOfMass

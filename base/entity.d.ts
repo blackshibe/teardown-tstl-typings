@@ -9,8 +9,8 @@
 // GetEntityParent
 // SetTag
 // RemoveTag
-// HasTag
-// GetTagValue
+declare function HasTag(this: void, entity: number, tag: string): boolean;
+declare function GetTagValue(this: void, entity: number, tag: string): string;
 // ListTags
 // GetDescription
 // SetDescription

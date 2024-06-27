@@ -3,17 +3,19 @@
     by blackshibe, written 26/06/2024
 */
 
+declare function GetShapeJoints(this: void, body: number): number[];
+
 // FindJoint
 // FindJoints
 // IsJointBroken
 // GetJointType
 // GetJointOtherShape
 // GetJointShapes
-// SetJointMotor
+declare function SetJointMotor(this: void, joint: number, velocity: number, strength?: number): void;
 // SetJointMotorTarget
 // GetJointLimits
 // GetJointMovement
-// GetJointedBodies
+declare function GetJointedBodies(this: void, joint: number): number[];
 // DetachJointFromShape
 // GetRopeNumberOfPoints
 // GetRopePointPosition
