@@ -5,9 +5,9 @@
 
 // FindBody
 // FindBodies
-// GetBodyTransform
+declare function GetBodyTransform(this: void, body: number): TTransform;
 // SetBodyTransform
-// GetBodyMass
+declare function GetBodyMass(this: void, body: number): number;
 // IsBodyDynamic
 // SetBodyDynamic
 // SetBodyVelocity

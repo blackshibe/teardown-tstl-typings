@@ -8,9 +8,9 @@
 // GetShapeLocalTransform
 // SetShapeLocalTransform
 // GetShapeWorldTransform
-// GetShapeBody
+declare function GetShapeBody(this: void, shape: number): number;
 // GetShapeJoints
-// GetShapeLights
+declare function GetShapeLights(this: void, shape: number): number[];
 // GetShapeBounds
 // SetShapeEmissiveScale
 // SetShapeDensity

@@ -10,7 +10,7 @@ declare function GetShapeJoints(this: void, body: number): number[];
 // IsJointBroken
 // GetJointType
 // GetJointOtherShape
-// GetJointShapes
+declare function GetJointShapes(this: void, joint: number): number[];
 declare function SetJointMotor(this: void, joint: number, velocity: number, strength?: number): void;
 // SetJointMotorTarget
 // GetJointLimits
