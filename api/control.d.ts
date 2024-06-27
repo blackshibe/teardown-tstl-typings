@@ -3,6 +3,8 @@
     by blackshibe, written 26/06/2024
 */
 
+type TPauseMenuButtonLocation = "bottom_bar" | "main_bottom" | "main_top";
+
 declare type TInputKey =
 	| "esc"
 	| "tab"
@@ -134,4 +136,12 @@ declare function LastInputDevice(this: void): string;
 declare function SetValue(this: void, value: string, transition: TTransition, time: number): string;
 declare function SetValueInTable(this: void, t: object, value: string, transition: TTransition, time: number): string;
 
-declare function PauseMenuButton(this: void, title: string): boolean;
+/**
+ * Calling this function will add a button on the bottom bar or in the main pause menu (center of the screen) when the game is paused. Identified by 'location' parameter, it can be below "Main menu" button (by passing "main_bottom" value)or above (by passing "main_top"). A primary button will be placed in the main pause menu if this function is called from a playable mod. There can be only one primary button. Use this as a way to bring up mod settings or other user interfaces while the game is running. Call this function every frame from the tick function for as long as the pause menu button should still be visible. Only one button per script is allowed. Consecutive calls replace button added in previous calls.
+ *
+ * @param title Text on button
+ * @param location Button location. If "bottom_bar" - bottom bar, if "main_bottom" - below "Main menu" button, if "main_top" - above "Main menu" button. Default "bottom_bar".
+ *
+ * @returns True if clicked, false otherwise
+ */
+declare function PauseMenuButton(this: void, title: string, location?: TPauseMenuButtonLocation): boolean;

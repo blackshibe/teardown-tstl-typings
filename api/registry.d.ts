@@ -13,7 +13,13 @@ declare function GetFloat(this: void, key: string): number;
 declare function GetString(this: void, key: string): string;
 
 // ClearKey
-// ListKeys
+/**
+ * Clears a key from the registry.
+ *
+ * @param key The key to clear.
+ * @returns void
+ */
+declare function ListKeys(this: void, prefix: string): string[];
 // HasKey
 // SetInt
 // GetInt
